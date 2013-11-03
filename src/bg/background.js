@@ -1,12 +1,20 @@
-;(function (chrome, interceptors, storage, undefined) {
+;(function (chrome, interceptors) {
 
-  var settings = {};
-  storage.read(function (fromStorage) {
-    settings = fromStorage;
+  var settings = {
+    'maptype': false,
+    'layertype': false,
+  };
+
+  chrome.storage.sync.get("mapSettings", function (storedSettings) {
+    settings.maptype = storedSettings.mapSettings.maptype;
+    settings.layertype = storedSettings.mapSettings.layertype;
   });
 
-  storage.onChange(function (newSettings) {
-    settings = newSettings;
+  chrome.storage.onChanged.addListener(function (changes, areaName) {
+    if (areaName === 'sync' && changes.mapSettings) {
+      settings.maptype = changes.mapSettings.newValue.maptype;
+      settings.layertype = changes.mapSettings.newValue.layertype;
+    }
   });
 
   var getMapInputs = function (url) {
@@ -22,24 +30,29 @@
     };
   };
 
+  var getCurrentSettings = function () {
+    return settings;
+  }
+
   chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
       if (details.type !== 'image') {
         return void 0;
       }
+
       var input = getMapInputs(details.url),
-          mapType = settings['source'],
-          layer = settings['layer'];
+          maptype = settings['maptype'],
+          layertype = settings['layertype'];
 
       if (!input) {
         return void 0;
       }
 
-      if (!interceptors[mapType] || !interceptors[mapType].layers[layer]) {
+      if (!interceptors[maptype] || !interceptors[maptype].layers[layertype]) {
         return void 0;
       }
 
-      var map = interceptors[mapType].layers[layer],
+      var map = interceptors[maptype].layers[layertype],
           res = map.replace(input);
 
       if (res) {
@@ -53,4 +66,4 @@
     },
     ["blocking"]
   );
-}(window.chrome, window.interceptors, window.storage));
+}(window.chrome, window.interceptors));

@@ -1,59 +1,27 @@
-;(function (chrome, interceptors, storage, undefined) {
-  var $ul = $("#interceptors");
+;(function (chrome, interceptors) {
+  var populate = function () {
+    _.each(interceptors, function (interceptor, interceptorId) {
+      var h1 = "<h1>" + interceptor.name + "</h1>";
+      $("body").append(h1);
 
-  var template = (function () {
-    var tmpl = "<li {{extra}}><a href='#' data-interceptor='{{key}}'>{{name}}</a>";
-    return function (name, key, extra) {
-      extra = extra || '';
-      return tmpl
-                .replace(/\{\{name\}\}/g, name)
-                .replace(/\{\{key\}\}/g, key)
-                .replace(/\{\{extra\}\}/g, extra)
-    };
-  }());
-
-  var populate = function (settings) {
-    var data = _.reduce(interceptors, function(str, interceptor, i) {
-      var childIsSelected = false;
-      var children = _.reduce(interceptor.layers, function(acc, layer, k) {
-                      var selected = settings.source === i && settings.layer === k;
-                      if (selected) {
-                        childIsSelected = true;
-                      }
-
-                      return acc + template(layer.name, k, selected ? 'class="active"' : '') + "</li>";
-                    }, "<ul>") + "</ul></li>";
-
-      var extra = 'class="top' + (childIsSelected ? " open" : "") + '"';
-      return str + template(interceptor.name, i, extra)
-                 + children;
-    }, "");
-
-    $ul.html(data);
+      _.each(interceptor.layers, function (layer, layerId) {
+        var li = "<input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='maplayer'>" + layer.name + "</input><br/>";
+        $("body").append(li);
+      });
+    });    
   };
 
-  var mapLayerClicked = function (e) {
-    e.preventDefault();
+  populate();
 
-    var $el = $(e.currentTarget),
-        $li = $el.parent();
-
-    if($li.hasClass("top")) {
-      $li.toggleClass("open");
-      return;
-    }
-
-    var settings = storage.create($el);
-    storage.save(settings, function (msg) {
-      $(".active").removeClass("active");
-      $li.addClass("active");
+  $("input").click(function (e) {
+    var settings = $(e.currentTarget).data();
+    chrome.storage.sync.set({
+      "mapSettings": settings
     });
-  };
-
-  storage.read(function (settings) {
-    console.log("settings", settings);
-    populate(settings);
   });
-  $ul.on("click", "a", mapLayerClicked);
 
-}(window.chrome, window.interceptors, window.storage));
+  chrome.storage.sync.get("mapSettings", function (settings) {
+    var mapSettings = settings.mapSettings;
+    $("input[data-layertype='" + mapSettings.layertype + "']").attr("checked", "checked");
+  });
+}(window.chrome, window.interceptors));
