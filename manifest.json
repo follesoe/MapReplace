@@ -1,18 +1,28 @@
 {
-  "manifest_version": 2,
   "name": "Map Replace",
   "description": "This extension will allow you to replace Google Maps with another mapping service on any web site.",
-  "version": "0.1",
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "settings.html"
+  "homepage_url": "https://github.com/follesoe/MapReplace",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["interceptor.js"]
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "options_page": "src/options_custom/index.html",
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Map Replace",
+    "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "storage",
     "*://*/*"
   ]
 }
