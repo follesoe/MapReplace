@@ -3,17 +3,20 @@
   var settings = {
     'maptype': false,
     'layertype': false,
+    'enabled': false
   };
 
   chrome.storage.sync.get("mapSettings", function (storedSettings) {
     settings.maptype = storedSettings.mapSettings.maptype;
     settings.layertype = storedSettings.mapSettings.layertype;
+    settings.enabled = storedSettings.mapSettings.enabled;
   });
 
   chrome.storage.onChanged.addListener(function (changes, areaName) {
     if (areaName === 'sync' && changes.mapSettings) {
       settings.maptype = changes.mapSettings.newValue.maptype;
       settings.layertype = changes.mapSettings.newValue.layertype;
+      settings.enabled = changes.mapSettings.newValue.enabled;
     }
   });
 
@@ -36,7 +39,7 @@
 
   chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
-      if (details.type !== 'image') {
+      if (details.type !== 'image' || !settings.enabled) {
         return void 0;
       }
 
