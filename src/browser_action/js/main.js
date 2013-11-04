@@ -5,14 +5,15 @@
 
   var populate = function () {
 
-    $("body").append("<h1>Enable MapReplace</h1>")
-    $("body").append("<label><input type='checkbox' id='isEnabled' />Enable MapReplace for all pages</label>");
+    $("body").append("<h1>Enable Map Replace</h1>")
+    $("body").append("<label><input type='checkbox' id='isEnabled' />Enable Map Replace for all pages</label>");
 
-    _.each(interceptors, function (interceptor, interceptorId) {
+    _.each(interceptors, function (interceptor, interceptorId) {      
       var h1 = "<h1>" + interceptor.name + "</h1>";
       $("body").append(h1);
 
       _.each(interceptor.layers, function (layer, layerId) {
+        console.log(layer);
         var input = "<label><input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='layerid' />" + layer.name + "</label></br>";
         $("body").append(input);
       });

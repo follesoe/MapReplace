@@ -14,7 +14,7 @@ var interceptors = (function () {
           }
         },
         "sjo_hovedkart2": {
-          name: "Statkart SjÃ¸ Hovedkart",
+          name: "Statkart Sjø Hovedkart",
           replace: function(input) {
             return statkart("sjo_hovedkart2", input.x, input.y, input.z);
           }
@@ -26,7 +26,7 @@ var interceptors = (function () {
           }
         },
         "topo2graatone": {
-          name: "Statkart GrÃ¥tone",
+          name: "Statkart Gråtone",
           replace: function(input) {
             return statkart("topo2graatone", input.x, input.y, input.z);
           }
