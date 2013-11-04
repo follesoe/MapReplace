@@ -2,7 +2,7 @@
   "name": "Map Replace",
   "description": "This extension will allow you to replace Google Maps with another mapping service on any web site.",
   "homepage_url": "https://github.com/follesoe/MapReplace",
-  "version": "0.1.0",
+  "version": "0.0.0.1",
   "manifest_version": 2,
   "icons": {
     "16": "icons/icon16.png",

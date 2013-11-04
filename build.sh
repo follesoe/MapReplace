@@ -1,0 +1,1 @@
+zip -r MapReplace.zip * -x *.git* *.sh*
