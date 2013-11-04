@@ -27,11 +27,13 @@
   };
 
   var enableDisableSelection = function() {
-    var disabledAttr = settings.enabled ? null : "disabled";
-    $("input[type='radio']").attr("disabled", disabledAttr);
-  }
+    $("input[type='radio']").attr("disabled", function () {
+      return settings.enabled ? null : "disabled";
+    });
+  };
 
   populate();
+  enableDisableSelection();
 
   $("input[type='radio']").click(function (e) {
     var newSettings = $(e.currentTarget).data();
@@ -51,7 +53,7 @@
     settings.maptype = mapSettings.maptype;
     settings.layertype = mapSettings.layertype;
     settings.enabled = mapSettings.enabled;
-    
+
     var checkedAttr = settings.enabled ? "checked" : null;
     $("input[type='checkbox']").attr("checked", checkedAttr);
     $("input[data-layertype='" + mapSettings.layertype + "']").attr("checked", "checked");
