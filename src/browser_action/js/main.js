@@ -5,8 +5,8 @@
       $("body").append(h1);
 
       _.each(interceptor.layers, function (layer, layerId) {
-        var li = "<input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='maplayer'>" + layer.name + "</input><br/>";
-        $("body").append(li);
+        var input = "<label><input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='layerid'>" + layer.name + "</label></br>";
+        $("body").append(input);
       });
     });    
   };
