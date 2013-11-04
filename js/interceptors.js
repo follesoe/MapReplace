@@ -2,15 +2,38 @@ var interceptors = (function () {
   var statkart = function(layer, input) {
     return "http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=" + layer + "&zoom=" + input.z + "&x=" + input.x + "&y=" + input.y;
   }
-
   return {
     osm: {
       name: "OpenStreetMap",
       layers: {
-        "foo": {
-          name: "OpenStreetMap",
+        "osm-standard": {
+          name: "Standard",
           replace: function (input) {
             return "http://tile.openstreetmap.org/" + input.z + "/" + input.x + "/" + input.y + ".png";
+          }
+        },
+        "osm-cycle": {
+          name: "Cycle Map",
+          replace: function (input) {
+            return "http://otile3.mqcdn.com/tiles/1.0.0/osm/" + input.z + "/" + input.x + "/" + input.y + ".png";
+          }
+        },
+        "osm-transport": {
+          name: "Transport Map",
+          replace: function (input) {
+            return "http://a.tile.openstreetmap.fr/hot/" + input.z + "/"+ input.x + "/" + input.y + ".png";
+          }
+        },
+        "osm-mapquest": {
+          name: "MapQuest Open",
+          replace: function (input) {
+            return "http://b.tile.openstreetmap.org/" + input.z + "/" + input.x + "/" + input.y + ".png";
+          }
+        },
+        "osm-humanitarian": {
+          name: "Humanitarian",
+          replace: function (input) {
+            return "http://c.tile.openstreetmap.fr/hot/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         }
       }
