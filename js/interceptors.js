@@ -1,4 +1,3 @@
-
 var interceptors = (function () {
   var statkart = function(layer, x, y, z) {
     return "http://opencache.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=" + layer + "&zoom=" + z + "&x=" + x + "&y=" + y;
