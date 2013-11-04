@@ -6,17 +6,19 @@
     'enabled': false
   };
 
+  var setNewSettings = function (storedSettings) {
+    settings.maptype = storedSettings.maptype;
+    settings.layertype = storedSettings.layertype;
+    settings.enabled = storedSettings.enabled;
+  };
+
   chrome.storage.sync.get("mapSettings", function (storedSettings) {
-    settings.maptype = storedSettings.mapSettings.maptype;
-    settings.layertype = storedSettings.mapSettings.layertype;
-    settings.enabled = storedSettings.mapSettings.enabled;
+    setNewSettings(storedSettings.mapSettings);
   });
 
   chrome.storage.onChanged.addListener(function (changes, areaName) {
     if (areaName === 'sync' && changes.mapSettings) {
-      settings.maptype = changes.mapSettings.newValue.maptype;
-      settings.layertype = changes.mapSettings.newValue.layertype;
-      settings.enabled = changes.mapSettings.newValue.enabled;
+      setNewSettings(changes.mapSettings.newValue);
     }
   });
 
@@ -32,10 +34,6 @@
       z: matches[4]
     };
   };
-
-  var getCurrentSettings = function () {
-    return settings;
-  }
 
   chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
