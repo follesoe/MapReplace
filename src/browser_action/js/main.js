@@ -4,8 +4,9 @@
   };
 
   var populate = function () {
-    var checkbox = "<label><input type='checkbox' id='isEnabled' />Enable MapReplace</label>";
-    $("body").append(checkbox);
+
+    $("body").append("<h1>Enable MapReplace</h1>")
+    $("body").append("<label><input type='checkbox' id='isEnabled' />Enable MapReplace for all pages</label>");
 
     _.each(interceptors, function (interceptor, interceptorId) {
       var h1 = "<h1>" + interceptor.name + "</h1>";

@@ -4,8 +4,22 @@
   }
 
   body {
+    background: url(../img/background.png);
+    margin: 12px;
     min-width: 350px;
     font-family: Helvetica, Arial, sans-serif;
+  }
+
+  h1 {
+    font-size: 1em;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  input {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-right: 6px;
   }
 
   .main-list {
