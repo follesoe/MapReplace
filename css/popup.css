@@ -10,10 +10,15 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-h1 {
-  font-size: 1em;
+h1, h2 {
+  font-size: 1.1em;
   margin-top: 6px;
   margin-bottom: 6px;
+}
+
+
+h2 {
+  font-size: 1em;
 }
 
 input {

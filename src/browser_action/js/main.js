@@ -4,18 +4,16 @@
   };
 
   var populate = function () {
-
-    $("body").append("<h1>Enable Map Replace</h1>")
-    $("body").append("<label><input type='checkbox' id='isEnabled' />Enable Map Replace for all pages</label>");
+    var $body = $("body");
+    $body.append("<h1>Enable Map Replace</h1>")
+         .append("<label><input type='checkbox' id='isEnabled' />Enable Map Replace for all pages</label>");
 
     _.each(interceptors, function (interceptor, interceptorId) {
-      var h1 = "<h1>" + interceptor.name + "</h1>";
-      $("body").append(h1);
+      $body.append("<h2>" + interceptor.name + "</h2>");
 
       _.each(interceptor.layers, function (layer, layerId) {
-        console.log(layer);
         var input = "<label><input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='layerid' />" + layer.name + "</label>";
-        $("body").append(input);
+        $body.append(input);
       });
     });
   };
