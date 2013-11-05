@@ -31,7 +31,6 @@
   };
 
   populate();
-  enableDisableSelection();
 
   $("input[type='radio']").click(function (e) {
     var newSettings = $(e.currentTarget).data();
@@ -55,5 +54,6 @@
     var checkedAttr = settings.enabled ? "checked" : null;
     $("input[type='checkbox']").attr("checked", checkedAttr);
     $("input[data-layertype='" + mapSettings.layertype + "']").attr("checked", "checked");
+    enableDisableSelection();
   });
 }(window.chrome, window.interceptors));
