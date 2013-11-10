@@ -1,10 +1,18 @@
 {
-	"extName": {
-		"message": "Map Replace",
-		"description": "Extension name."
-	},
-	"extDescription": {
-		"message": "This extension will allow you to replace Google Maps with another mapping service on any web site.",
-		"description": "Extension description."
-	}
+  "extName": {
+    "message": "Map Replace",
+    "description": "Extension name."
+  },
+  "extDescription": {
+    "message": "This extension will allow you to replace Google Maps with another mapping service on any web site.",
+    "description": "Extension description."
+  },
+  "settingsTitle": {
+    "message": "Enable Map Replace",
+    "description": "Title of the settings window."
+  },
+  "settingsEnableDescription": {
+    "message": "Enable Map Replace for all pages",
+    "description": "Description text for checkbox to enable Map Replace"
+  }
 }

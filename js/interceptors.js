@@ -13,13 +13,13 @@ var interceptors = (function () {
           }
         },
         "osm-cycle": {
-          name: "Cycle Map",
+          name: "Cycle",
           replace: function (input) {
             return "http://otile3.mqcdn.com/tiles/1.0.0/osm/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
         "osm-transport": {
-          name: "Transport Map",
+          name: "Transport",
           replace: function (input) {
             return "http://a.tile.openstreetmap.fr/hot/" + input.z + "/"+ input.x + "/" + input.y + ".png";
           }
@@ -42,39 +42,39 @@ var interceptors = (function () {
       name: "Statkart",
       layers: {
         "statkart-topo2": {
-          name: "Statkart Topografisk",
+          name: "Land",
           replace: function (input) {
             return statkart("topo2", input);
           }
         },
         "sjo_hovedkart2": {
-          name: "Statkart Sjø Hovedkart",
+          name: "Sjøkart",
           replace: function (input) {
             return statkart("sjo_hovedkart2", input);
           }
         },
-        "kartdata2": {
-          name: "Statkart Kartdata 2",
+        "norges_grunnkart": {
+          name: "Enkel",
           replace: function (input) {
-            return statkart("kartdata2", input);
+            return statkart("norges_grunnkart", input);
           }
         },
         "topo2graatone": {
-          name: "Statkart Gråtone",
+          name: "Gråtone",
           replace: function (input) {
             return statkart("topo2graatone", input);
           }
         },
-        "toporaster2": {
-          name: "Statkart Topografisk Raster",
-          replace: function (input) {
-            return statkart("toporaster2", input);
-          }
-        },
         "europa": {
-          name: "Statkart Europa",
+          name: "Europa",
           replace: function (input) {
             return statkart("europa", input);
+          }
+        },        
+        "toporaster2": {
+          name: "Plast-/Papirkark - Norge 1:50000",
+          replace: function (input) {
+            return statkart("toporaster2", input);
           }
         }
       }

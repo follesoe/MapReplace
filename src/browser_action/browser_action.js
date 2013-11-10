@@ -5,8 +5,8 @@
 
   var populate = function () {
     var $body = $("body");
-    $body.append("<h1>Enable Map Replace</h1>")
-         .append("<label><input type='checkbox' id='isEnabled' />Enable Map Replace for all pages</label>");
+    $body.append("<h1>" + chrome.i18n.getMessage("settingsTitle") + "</h1>")
+         .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>");
 
     _.each(interceptors, function (interceptor, interceptorId) {
       $body.append("<h2>" + interceptor.name + "</h2>");
