@@ -1,0 +1,10 @@
+{
+	"extName": {
+		"message": "Map Replace",
+		"description": "Extension name."
+	},
+	"extDescription": {
+		"message": "This extension will allow you to replace Google Maps with another mapping service on any web site.",
+		"description": "Extension description."
+	}
+}
