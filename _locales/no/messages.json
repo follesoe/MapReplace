@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Map Replace",
+    "description": "Extension name."
+  },
+  "extDescription": {
+    "message": "Denne utvidelsen vil la deg bytte ut Google Maps med et annet kart, som Statens Kartverk, på en hvilken som helst nettside.",
+    "description": "Extension description."
+  },
+  "settingsTitle": {
+    "message": "Aktiver Map Replace",
+    "description": "Title of the settings window."
+  },
+  "settingsEnableDescription": {
+    "message": "Aktiver Map Replace på alle nettsider",
+    "description": "Description text for checkbox to enable Map Replace"
+  }
+}
