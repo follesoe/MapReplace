@@ -1,0 +1,3 @@
+Map Replace let you replace Google Maps with maps from Statens Kartverk (Norway), Finn.no (Norway) or Open Street Map. This Chrome Extension works on any web site that uses Google Maps, like Strava.com, Runkeeper.com and Movescount.com.
+
+The benefit of replacing Google Maps with other map providers is that they might provide better maps for certain areas. For example, the maps from Statens Kartverk provides superior maps over Norway.
