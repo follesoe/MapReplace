@@ -11,7 +11,7 @@
          .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>");
 
     $.each(interceptors, function (interceptorId, interceptor) {
-      $body.append("<h2>" + interceptor.name + "</h2>");
+      $body.append("<h2>" + (interceptor.name[locale] || interceptor.name["en"]) + "</h2>");
 
       $.each(interceptor.layers, function (layerId, layer) {
         var layerName = layer.name[locale] || layer.name["en"],

@@ -4,7 +4,9 @@ var interceptors = (function () {
   }
   return {
     osm: {
-      name: "OpenStreetMap",
+      name: {
+        en: "OpenStreetMap"
+      },
       layers: {
         "osm-standard": {
           name: {
@@ -49,7 +51,10 @@ var interceptors = (function () {
       }
     },
     statkart: {
-      name: "Statkart",
+      name: {
+        en: "Norwegian Mapping Authority",
+        no: "Kartverket"
+      },
       layers: {
         "statkart-topo2": {
           name: {
@@ -106,7 +111,9 @@ var interceptors = (function () {
       }
     },
     finn: {
-      name: "Finn.no",
+      name: {
+        en: "Finn.no"
+      },
       layers: {
         "finn-standard": {
           name: {
