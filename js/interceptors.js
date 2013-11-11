@@ -7,31 +7,41 @@ var interceptors = (function () {
       name: "OpenStreetMap",
       layers: {
         "osm-standard": {
-          name: "Standard",
+          name: {
+            en: "Standard"
+          },
           replace: function (input) {
             return "http://tile.openstreetmap.org/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
         "osm-cycle": {
-          name: "Cycle",
+          name: {
+            en: "Cycle"
+          },
           replace: function (input) {
             return "http://otile3.mqcdn.com/tiles/1.0.0/osm/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
         "osm-transport": {
-          name: "Transport",
+          name: {
+            en: "Transport"
+          },
           replace: function (input) {
             return "http://a.tile.openstreetmap.fr/hot/" + input.z + "/"+ input.x + "/" + input.y + ".png";
           }
         },
         "osm-mapquest": {
-          name: "MapQuest Open",
+          name: {
+            en: "MapQuest Open"
+          },
           replace: function (input) {
             return "http://b.tile.openstreetmap.org/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
         "osm-humanitarian": {
-          name: "Humanitarian",
+          name: {
+            en: "Humanitarian"
+          },
           replace: function (input) {
             return "http://c.tile.openstreetmap.fr/hot/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
@@ -42,37 +52,53 @@ var interceptors = (function () {
       name: "Statkart",
       layers: {
         "statkart-topo2": {
-          name: "Land",
+          name: {
+            en: "Land"
+          },
           replace: function (input) {
             return statkart("topo2", input);
           }
         },
         "sjo_hovedkart2": {
-          name: "Sjøkart",
+          name: {
+            en: "Sea map",
+            no: "Sjøkart"
+          },
           replace: function (input) {
             return statkart("sjo_hovedkart2", input);
           }
         },
         "norges_grunnkart": {
-          name: "Enkel",
+          name: {
+            en: "Simple",
+            no: "Enkel"            
+          },
           replace: function (input) {
             return statkart("norges_grunnkart", input);
           }
         },
         "topo2graatone": {
-          name: "Gråtone",
+          name: {
+            en: "Grayscale",
+            no: "Gråtone"
+          },
           replace: function (input) {
             return statkart("topo2graatone", input);
           }
         },
         "europa": {
-          name: "Europa",
+          name: {
+            en: "Europa"
+          },
           replace: function (input) {
             return statkart("europa", input);
           }
         },        
         "toporaster2": {
-          name: "Plast-/Papirkark - Norge 1:50000",
+          name: {
+            en: "Norway 1:50000 Raster",
+            no: "Papirkark - Norge 1:50000"
+          },
           replace: function (input) {
             return statkart("toporaster2", input);
           }
@@ -83,19 +109,26 @@ var interceptors = (function () {
       name: "Finn.no",
       layers: {
         "finn-standard": {
-          name: "Standard",
+          name: {
+            en: "Standard"
+          },
           replace: function (input) {
             return "http://maptiles2.finncdn.no/tileService/1.0.1/normap/" + input.z + "/" + input.x + "/" + input.y + ".png"
           }
         },
         "finn-flight": {
-          name: "Flyfoto",
+          name: {
+            en: "Arial photo",
+            no: "Flyfoto"
+          },
           replace: function (input) {
             return "http://maptiles3.finncdn.no/tileService/1.0.1/norortho/" + input.z + "/" + input.x + "/" + input.y + ".png"
           }
         },
         "finn-hybrid": {
-          name: "Hybrid",
+          name: {
+            en: "Hybrid"
+          },
           replace: function (input) {
             return "http://maptiles2.finncdn.no/tileService/1.0.1/norhybrid/" + input.z + "/" + input.x + "/" + input.y + ".png"
           }

@@ -3,15 +3,19 @@
     enabled: false
   };
 
-  var populate = function () {
-    var $body = $("body");
+  var populate = function () {    
+    var $body = $("body"),
+        locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2);
+
     $body.append("<h1>" + chrome.i18n.getMessage("settingsTitle") + "</h1>")
          .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>");
+
     $.each(interceptors, function (interceptorId, interceptor) {
       $body.append("<h2>" + interceptor.name + "</h2>");
 
       $.each(interceptor.layers, function (layerId, layer) {
-        var input = "<label><input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='layerid' />" + layer.name + "</label>";
+        var layerName = layer.name[locale] || layer.name["en"],
+            input = "<label><input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='layerid' />" + layerName + "</label>";
         $body.append(input);
       });
     });
