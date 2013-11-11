@@ -7,11 +7,10 @@
     var $body = $("body");
     $body.append("<h1>" + chrome.i18n.getMessage("settingsTitle") + "</h1>")
          .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>");
-
-    _.each(interceptors, function (interceptor, interceptorId) {
+    $.each(interceptors, function (interceptorId, interceptor) {
       $body.append("<h2>" + interceptor.name + "</h2>");
 
-      _.each(interceptor.layers, function (layer, layerId) {
+      $.each(interceptor.layers, function (layerId, layer) {
         var input = "<label><input type='radio' data-maptype='" + interceptorId + "' data-layertype='" + layerId + "' name='layerid' />" + layer.name + "</label>";
         $body.append(input);
       });
