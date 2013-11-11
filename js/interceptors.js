@@ -24,6 +24,14 @@ var interceptors = (function () {
             return "http://otile3.mqcdn.com/tiles/1.0.0/osm/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
+        "osm-sea": {
+          name: {
+            en: "Sea map"
+          },
+          replace: function (input) {
+            return "http://osm1.wtnet.de/tiles/base/" + input.z + "/" + input.x + "/" + input.y + ".png";
+          }
+        },
         "osm-transport": {
           name: {
             en: "Transport"
@@ -46,6 +54,14 @@ var interceptors = (function () {
           },
           replace: function (input) {
             return "http://c.tile.openstreetmap.fr/hot/" + input.z + "/" + input.x + "/" + input.y + ".png";
+          }
+        },
+        "osm-watercolor": {
+          name: {
+            en: "Watercolor"
+          },
+          replace: function (input) {
+            return "http://tile.stamen.com/watercolor/" + input.z + "/" + input.x + "/" + input.y + ".jpg";
           }
         }
       }
