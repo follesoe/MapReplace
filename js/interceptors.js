@@ -69,7 +69,7 @@ var interceptors = (function () {
     statkart: {
       name: {
         en: "Norwegian Mapping Authority",
-        no: "Kartverket"
+        nb: "Kartverket"
       },
       layers: {
         "statkart-topo2": {
@@ -83,7 +83,7 @@ var interceptors = (function () {
         "sjo_hovedkart2": {
           name: {
             en: "Sea map",
-            no: "Sjøkart"
+            nb: "Sjøkart"
           },
           replace: function (input) {
             return statkart("sjo_hovedkart2", input);
@@ -92,7 +92,7 @@ var interceptors = (function () {
         "norges_grunnkart": {
           name: {
             en: "Simple",
-            no: "Enkel"            
+            nb: "Enkel"            
           },
           replace: function (input) {
             return statkart("norges_grunnkart", input);
@@ -101,7 +101,7 @@ var interceptors = (function () {
         "topo2graatone": {
           name: {
             en: "Grayscale",
-            no: "Gråtone"
+            nb: "Gråtone"
           },
           replace: function (input) {
             return statkart("topo2graatone", input);
@@ -118,7 +118,7 @@ var interceptors = (function () {
         "toporaster2": {
           name: {
             en: "Norway 1:50000 Raster",
-            no: "Papirkark - Norge 1:50000"
+            nb: "Papirkark - Norge 1:50000"
           },
           replace: function (input) {
             return statkart("toporaster2", input);
@@ -142,7 +142,7 @@ var interceptors = (function () {
         "finn-flight": {
           name: {
             en: "Arial photo",
-            no: "Flyfoto"
+            nb: "Flyfoto"
           },
           replace: function (input) {
             return "http://maptiles3.finncdn.no/tileService/1.0.1/norortho/" + input.z + "/" + input.x + "/" + input.y + ".png"

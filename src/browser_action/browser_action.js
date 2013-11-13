@@ -3,7 +3,8 @@
     enabled: false
   };
 
-  var populate = function () {    
+  var populate = function () {
+    console.log(chrome.i18n.getMessage("@@ui_locale"));
     var $body = $("body"),
         locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2);
 
