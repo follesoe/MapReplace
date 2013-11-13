@@ -1,1 +1,1 @@
-zip -r MapReplace.zip * -x *.git* *.sh* *docs* *.DS_Store*
+zip -r MapReplace.zip * -x=*.git* -x=*.sh* -x=*docs* -x=*.DS_Store*
