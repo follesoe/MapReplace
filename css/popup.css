@@ -11,6 +11,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.wrapper {
+  max-height: 600px;
+  overflow: auto;
+}
+
 h1 {
   font-size: 1.1em;
   margin-top: 6px;

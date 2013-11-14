@@ -5,7 +5,7 @@
 
   var populate = function () {
     console.log(chrome.i18n.getMessage("@@ui_locale"));
-    var $body = $("body"),
+    var $body = $("#contents"),
         locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2);
 
     $body.append("<h1>" + chrome.i18n.getMessage("settingsTitle") + "</h1>")
