@@ -24,6 +24,17 @@ body {
   margin-bottom: 20px;
 }
 
+.copyright {
+  font-size: 0.8em;
+  color: #666;
+  font-style: italic;
+}
+
+.copyright a:link,
+.copyright a:visited {
+  color: #666;
+}
+
 h1 {
   font-size: 1.1em;
   margin-top: 6px;

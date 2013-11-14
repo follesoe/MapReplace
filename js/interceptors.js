@@ -7,6 +7,10 @@ var interceptors = (function () {
       name: {
         en: "OpenStreetMap"
       },
+      copyright: {
+        en: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">',
+        nb: 'Kartdata levert av <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
+      },
       layers: {
         "osm-standard": {
           name: {
@@ -71,6 +75,10 @@ var interceptors = (function () {
         en: "Norwegian Mapping Authority",
         nb: "Kartverket"
       },
+      copyright: {
+        en: 'Tiles Courtesy of <a href="http://www.statkart.no/kart/gratis-kartdata/lisens/" target="_blank">Norwegian Mapping Authorities</a>',
+        nb: 'Kartdata levert av <a href="http://www.statkart.no/kart/gratis-kartdata/lisens/" target="_blank">Statkart</a>'
+      },
       layers: {
         "statkart-topo2": {
           name: {
@@ -92,7 +100,7 @@ var interceptors = (function () {
         "norges_grunnkart": {
           name: {
             en: "Simple",
-            nb: "Enkel"            
+            nb: "Enkel"
           },
           replace: function (input) {
             return statkart("norges_grunnkart", input);
@@ -114,7 +122,7 @@ var interceptors = (function () {
           replace: function (input) {
             return statkart("europa", input);
           }
-        },        
+        },
         "toporaster2": {
           name: {
             en: "Norway 1:50000 Raster",
@@ -129,6 +137,10 @@ var interceptors = (function () {
     finn: {
       name: {
         en: "Finn.no"
+      },
+      copyright: {
+        en: 'Tiles Courtesy of <a href="http://kart.finn.no/" target="_blank">Finn.no</a>.',
+        nb: 'Kartdata levert av <a href="http://kart.finn.no/" target="_blank">Finn.no</a>.'
       },
       layers: {
         "finn-standard": {

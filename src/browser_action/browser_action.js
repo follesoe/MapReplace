@@ -12,6 +12,7 @@
 
     $.each(interceptors, function (interceptorId, interceptor) {
       $body.append("<h2>" + (interceptor.name[locale] || interceptor.name["en"]) + "</h2>");
+      $body.append("<p class='copyright'>" + (interceptor.copyright[locale] || interceptor.copyright["en"]) + "</p>");
 
       $.each(interceptor.layers, function (layerId, layer) {
         var layerName = layer.name[locale] || layer.name["en"],
