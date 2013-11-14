@@ -3,7 +3,7 @@
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "homepage_url": "https://github.com/follesoe/MapReplace",
-  "version": "0.0.9-2",
+  "version": "0.0.9.2",
   "manifest_version": 2,
   "author": "Jonas Follesø, Mikael Brevik, Hege Røkenes",
   "offline_enabled": false,
