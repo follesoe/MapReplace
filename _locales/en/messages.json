@@ -14,5 +14,9 @@
   "settingsEnableDescription": {
     "message": "Enable Map Replace for all pages",
     "description": "Description text for checkbox to enable Map Replace"
+  },
+  "refreshNotice": {
+    "message": "You need to refresh the page for the changes to take effect.",
+    "description": "Notice showing when switching maps and layers."
   }
 }

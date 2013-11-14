@@ -4,7 +4,6 @@
   };
 
   var populate = function () {
-    console.log(chrome.i18n.getMessage("@@ui_locale"));
     var $body = $("#contents"),
         locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2);
 
@@ -34,9 +33,19 @@
     });
   };
 
+  var showRefreshNotice = function () {
+    if ($(".notice").length) {
+      return;
+    }
+    $("h1").before($("<p />", {
+      "class": "notice",
+    }).text(chrome.i18n.getMessage("refreshNotice")));
+  };
+
   populate();
 
   $("input[type='radio']").click(function (e) {
+    showRefreshNotice();
     var newSettings = $(e.currentTarget).data();
     settings.maptype = newSettings.maptype;
     settings.layertype = newSettings.layertype;
@@ -44,6 +53,7 @@
   });
 
   $("input[type='checkbox']").click(function (e) {
+    showRefreshNotice();
     settings.enabled = $(e.currentTarget).is(":checked");
     enableDisableSelection();
     saveSettings();

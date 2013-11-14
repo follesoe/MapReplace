@@ -16,6 +16,14 @@ body {
   overflow: auto;
 }
 
+.notice {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
 h1 {
   font-size: 1.1em;
   margin-top: 6px;

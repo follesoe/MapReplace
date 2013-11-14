@@ -14,5 +14,9 @@
   "settingsEnableDescription": {
     "message": "Aktiver Map Replace på alle nettsider",
     "description": "Description text for checkbox to enable Map Replace"
+  },
+  "refreshNotice": {
+    "message": "Du må oppdatere siden for at endringene skal aktiveres.",
+    "description": "Notice showing when switching maps and layers."
   }
 }
