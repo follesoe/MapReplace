@@ -26,6 +26,18 @@ Navigate to ```chrome://extensions/``` in Google Chrome, check the ```Developer 
 Press the ```Load unpacked extension...``` and select the project root folder.
 
 
+### Building the extension
+
+There seems to be a bug with OS X and Chrome locale requiring both the "nb" and "no" locale for Norwegian. To handle this, the "no" locale needs to be duplicated. This is handled as a step in the building.
+
+To build the extension run the following command in the terminal (on a Mac with make installed)
+
+```
+make
+```
+
+To remove the duplicated locale directory and bundled extension run ```make clean```.
+
 ## Contributors
 
 * Jonas Follesø [@follesoe](https://twitter.com/follesoe)
