@@ -5,7 +5,7 @@
 
   var populate = function () {
     var $body = $("#contents"),
-        locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2);
+        locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2).replace("nb", "no");
 
     $body.append("<h1>" + chrome.i18n.getMessage("settingsTitle") + "</h1>")
          .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>");

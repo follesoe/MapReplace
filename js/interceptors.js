@@ -9,7 +9,7 @@ var interceptors = (function () {
       },
       copyright: {
         en: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">',
-        nb: 'Kartdata levert av <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
+        no: 'Kartdata levert av <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
       },
       layers: {
         "osm-standard": {
@@ -73,11 +73,11 @@ var interceptors = (function () {
     statkart: {
       name: {
         en: "Norwegian Mapping Authority",
-        nb: "Kartverket"
+        no: "Kartverket"
       },
       copyright: {
         en: 'Tiles Courtesy of <a href="http://www.statkart.no/kart/gratis-kartdata/lisens/" target="_blank">Norwegian Mapping Authorities</a>',
-        nb: 'Kartdata levert av <a href="http://www.statkart.no/kart/gratis-kartdata/lisens/" target="_blank">Statkart</a>'
+        no: 'Kartdata levert av <a href="http://www.statkart.no/kart/gratis-kartdata/lisens/" target="_blank">Statkart</a>'
       },
       layers: {
         "statkart-topo2": {
@@ -91,7 +91,7 @@ var interceptors = (function () {
         "sjo_hovedkart2": {
           name: {
             en: "Sea map",
-            nb: "Sjøkart"
+            no: "Sjøkart"
           },
           replace: function (input) {
             return statkart("sjo_hovedkart2", input);
@@ -100,7 +100,7 @@ var interceptors = (function () {
         "norges_grunnkart": {
           name: {
             en: "Simple",
-            nb: "Enkel"
+            no: "Enkel"
           },
           replace: function (input) {
             return statkart("norges_grunnkart", input);
@@ -109,7 +109,7 @@ var interceptors = (function () {
         "topo2graatone": {
           name: {
             en: "Grayscale",
-            nb: "Gråtone"
+            no: "Gråtone"
           },
           replace: function (input) {
             return statkart("topo2graatone", input);
@@ -126,7 +126,7 @@ var interceptors = (function () {
         "toporaster2": {
           name: {
             en: "Norway 1:50000 Raster",
-            nb: "Papirkark - Norge 1:50000"
+            no: "Papirkark - Norge 1:50000"
           },
           replace: function (input) {
             return statkart("toporaster2", input);
@@ -140,7 +140,7 @@ var interceptors = (function () {
       },
       copyright: {
         en: 'Tiles Courtesy of <a href="http://kart.finn.no/" target="_blank">Finn.no</a>.',
-        nb: 'Kartdata levert av <a href="http://kart.finn.no/" target="_blank">Finn.no</a>.'
+        no: 'Kartdata levert av <a href="http://kart.finn.no/" target="_blank">Finn.no</a>.'
       },
       layers: {
         "finn-standard": {
@@ -154,7 +154,7 @@ var interceptors = (function () {
         "finn-flight": {
           name: {
             en: "Arial photo",
-            nb: "Flyfoto"
+            no: "Flyfoto"
           },
           replace: function (input) {
             return "http://maptiles3.finncdn.no/tileService/1.0.1/norortho/" + input.z + "/" + input.x + "/" + input.y + ".png"
