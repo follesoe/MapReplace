@@ -17,7 +17,7 @@ var interceptors = (function () {
             en: "Standard"
           },
           replace: function (input) {
-            return "http://tile.openstreetmap.org/" + input.z + "/" + input.x + "/" + input.y + ".png";
+            return "http://otile1.mqcdn.com/tiles/1.0.0/osm/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
         "osm-cycle": {
@@ -27,6 +27,7 @@ var interceptors = (function () {
           replace: function (input) {
             return "http://otile3.mqcdn.com/tiles/1.0.0/osm/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
+
         },
         "osm-sea": {
           name: {
@@ -57,7 +58,7 @@ var interceptors = (function () {
             en: "Humanitarian"
           },
           replace: function (input) {
-            return "http://c.tile.openstreetmap.fr/hot/" + input.z + "/" + input.x + "/" + input.y + ".png";
+            return "http://otile1.mqcdn.com/tiles/1.0.0/osm/hot/" + input.z + "/" + input.x + "/" + input.y + ".png";
           }
         },
         "osm-watercolor": {
