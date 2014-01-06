@@ -1,1 +1,1 @@
-{"version":"0.0.1","stations":[{"issues":[],"id":0,"name":"backlog"},{"issues":[],"id":1,"name":"in progress"},{"issues":[],"id":2,"name":"done"}]}
+{"version":"0.0.1","stations":[{"issues":[{"id":22715425},{"id":22701320},{"id":22442718}],"id":0,"name":"backlog","$$hashKey":"005"},{"issues":[{"id":22652879}],"id":1,"name":"in progress","$$hashKey":"006"},{"issues":[],"id":2,"name":"done","$$hashKey":"007"}]}
