@@ -24,15 +24,24 @@
 
   var getMapInputs = function (url) {
     var matches = /lyrs=([^&]+)(?:.*)&x=([^&]*)(?:.*)&y=([^&]*)(?:.*)&z=([^&]*)/.exec(url);
-    if (!matches || matches.length < 4) {
-      return void 0;
+    if (matches && matches.length >= 5) {
+      return {
+        x: matches[2],
+        y: matches[3],
+        z: matches[4]
+      };
     }
 
-    return {
-      x: matches[2],
-      y: matches[3],
-      z: matches[4]
-    };
+    matches = /pb=[^&]*!1i(\d+)!2i(\d+)!3i(\d+)/.exec(url);
+    if (matches) {
+      return {
+        x: matches[2],
+        y: matches[3],
+        z: matches[1]
+      };
+    }
+
+    return void 0;
   };
 
   chrome.webRequest.onBeforeRequest.addListener(
