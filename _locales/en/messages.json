@@ -12,7 +12,11 @@
     "description": "Title of the settings window."
   },
   "settingsEnableDescription": {
-    "message": "Enable Map Replace for all pages",
+    "message": "Enable Map Replace",
+    "description": "Description text for checkbox to enable Map Replace"
+  },
+  "settingsWhitelistDescription": {
+    "message": "Domain whitelist (ex: *.domain.com)",
     "description": "Description text for checkbox to enable Map Replace"
   },
   "refreshNotice": {

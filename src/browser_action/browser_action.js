@@ -1,6 +1,7 @@
 ;(function (chrome, interceptors) {
   var settings = {
-    enabled: false
+    enabled: false,
+    whitelist: ["*"]
   };
 
   var populate = function () {
@@ -8,7 +9,8 @@
         locale = chrome.i18n.getMessage("@@ui_locale").substr(0, 2).replace("nb", "no");
 
     $body.append("<h1>" + chrome.i18n.getMessage("settingsTitle") + "</h1>")
-         .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>");
+         .append("<label><input type='checkbox' id='isEnabled' />" + chrome.i18n.getMessage("settingsEnableDescription") + "</label>")
+         .append("<label for='whitelist'>" + chrome.i18n.getMessage("settingsWhitelistDescription") + "<textarea id='whitelist' rows=5 cols=40>" + settings.whitelist.join("\n") + "</textarea></label>");
 
     $.each(interceptors, function (interceptorId, interceptor) {
       $body.append("<h2>" + (interceptor.name[locale] || interceptor.name["en"]) + "</h2>");
@@ -60,14 +62,22 @@
     saveSettings();
   });
 
+  $("textarea#whitelist").bind('input propertychange', function () {
+    settings.whitelist = $("textarea#whitelist").val().split("\n");
+    saveSettings();
+  });
+
   chrome.storage.sync.get("mapSettings", function (storedSettings) {
     var mapSettings = storedSettings.mapSettings;
     settings.maptype = mapSettings.maptype;
     settings.layertype = mapSettings.layertype;
     settings.enabled = mapSettings.enabled;
+    settings.whitelist = mapSettings.whitelist;
 
     var checkedAttr = settings.enabled ? "checked" : null;
-    $("input[type='checkbox']").attr("checked", checkedAttr);
+    $("input#isEnabled").attr("checked", checkedAttr);
+    $("textarea#whitelist").val(settings.whitelist.join("\n"));
+
     $("input[data-layertype='" + mapSettings.layertype + "']").attr("checked", "checked");
     enableDisableSelection();
   });

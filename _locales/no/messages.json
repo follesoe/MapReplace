@@ -12,7 +12,11 @@
     "description": "Title of the settings window."
   },
   "settingsEnableDescription": {
-    "message": "Aktiver Map Replace på alle nettsider",
+    "message": "Aktiver Map Replace",
+    "description": "Description text for checkbox to enable Map Replace"
+  },
+  "settingsWhitelistDescription": {
+    "message": "Domene-hviteliste (eks: *.domene.no)",
     "description": "Description text for checkbox to enable Map Replace"
   },
   "refreshNotice": {
